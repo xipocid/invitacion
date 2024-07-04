@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación de Cumpleaños</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .header {
+            position: relative;
+            width: 100%;
+        }
+        .header img {
+            width: 100%;
+            display: block;
+        }
+        .body {
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .body img {
+            width: 100%;
+            display: block;
+        }
+        .button {
+            position: relative;
+            width: 100%;
+        }
+        .button img {
+            width: 50%;
+            display: block;
+            margin: 0 auto;
+        }
+        .torch {
+            position: absolute;
+            animation: torchFlicker 1s infinite;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+        .torch.left {
+            left: 20px; /* 20px de margen en el lado izquierdo */
+        }
+        .torch.right {
+            right: 20px; /* 20px de margen en el lado derecho */
+        }
+        @keyframes torchFlicker {
+            0% { background-image: url('https://static.wixstatic.com/media/13ba5e_413fa38f30bf46a185e9e418924a8590~mv2.png'); }
+            12.5% { background-image: url('https://static.wixstatic.com/media/13ba5e_ad5b62e9e8b74e4eb71af031241e9da8~mv2.png'); }
+            25% { background-image: url('https://static.wixstatic.com/media/13ba5e_886d70ad323b4324af435a13b231fdff~mv2.png'); }
+            37.5% { background-image: url('https://static.wixstatic.com/media/13ba5e_3c141bd230a84334b6f116c3f3514c61~mv2.png'); }
+            50% { background-image: url('https://static.wixstatic.com/media/13ba5e_4f337524bcf74f58be672963d71476f0~mv2.png'); }
+            62.5% { background-image: url('https://static.wixstatic.com/media/13ba5e_14591d51ef964d2098cdfda832fdd17d~mv2.png'); }
+            75% { background-image: url('https://static.wixstatic.com/media/13ba5e_ce258f8009de4934a2fa87cbd0d06fa3~mv2.png'); }
+            87.5% { background-image: url('https://static.wixstatic.com/media/13ba5e_34bb725ada8d41ababb6651652424436~mv2.png'); }
+            100% { background-image: url('https://static.wixstatic.com/media/13ba5e_413fa38f30bf46a185e9e418924a8590~mv2.png'); }
+        }
+        @media (orientation: portrait) {
+            body {
+                background-image: url('https://static.wixstatic.com/media/13ba5e_26e27277e4ce42d287360ad5f87addc4~mv2.png');
+            }
+            .header {
+                margin-top: 50px;
+            }
+            .body {
+                margin-top: 100px;
+            }
+            .button {
+                margin-top: 30px;
+                margin-bottom: 20px;
+            }
+            .header img { content: url('https://static.wixstatic.com/media/13ba5e_171dad20a61e4c9e969f84915bbfb53b~mv2.png'); }
+            .body img { content: url('https://static.wixstatic.com/media/13ba5e_4ca8174fe861493984f85aab32555964~mv2.png'); }
+            .button img { content: url('https://static.wixstatic.com/media/13ba5e_a44499c4268241d8afb53c24654936a0~mv2.png'); }
+            .torch.left {
+                top: calc(1850% - 200px); /* Ajusta la posición para estar al lado del botón */
+                left: calc(30% - 110px); /* Ajusta la posición horizontal */
+                width: 100px; /* Ajusta el tamaño */
+                height: 100px; /* Ajusta el tamaño */
+            }
+            .torch.right {
+                top: calc(1850% - 200px); /* Ajusta la posición para estar al lado del botón */
+                right: calc(15% - 110px); /* Ajusta la posición horizontal */
+                width: 100px; /* Ajusta el tamaño */
+                height: 100px; /* Ajusta el tamaño */
+            }
+        }
+        @media (orientation: landscape) {
+            body {
+                background-image: url('https://static.wixstatic.com/media/13ba5e_a5f73dfe852d442fb79b173869953681~mv2.png');
+            }
+            .header {
+                margin-top: 30px;
+            }
+            .body {
+                width: 120%; /* Tamaño del body al 150% */
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                margin-top: 0;
+            }
+            .button {
+                margin-top: 600px;
+                margin-bottom: 20px;
+            }
+            .header img { content: url('https://static.wixstatic.com/media/13ba5e_bd786cf36eef4ac29d98a1172ee00e58~mv2.png'); }
+            .body img { content: url('https://static.wixstatic.com/media/13ba5e_33c3ad28946a4a578302cb21f4ca9629~mv2.png'); }
+            .button img { content: url('https://static.wixstatic.com/media/13ba5e_c6c974e6c55449da94a85389560b84c1~mv2.png'); }
+            .torch.left {
+                left: -200px; /* Mueve la antorcha izquierda 100px a la derecha */
+                width: 150px; /* Tamaño mayor de las antorchas */
+                height: 250px; /* Tamaño mayor de las antorchas */
+                top: 90%;
+            }
+            .torch.right {
+                right: -300px;
+                width: 150px; /* Tamaño mayor de las antorchas */
+                height: 250px; /* Tamaño mayor de las antorchas */
+                top: 60%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="" alt="Encabezado">
+            <div class="torch left"></div>
+            <div class="torch right"></div>
+        </div>
+        <div class="body">
+            <img src="" alt="Cuerpo del mensaje">
+        </div>
+        <div class="button">
+            <a href="https://w.app/i5gf1k" target="_blank">
+                <img src="" alt="Botón">
+            </a>
+        </div>
+    </div>
+    <audio autoplay loop>
+        <source src="https://static.wixstatic.com/mp3/13ba5e_e0a123e10a1147d09e66db891146290b.mp3" type="audio/mpeg">
+        Tu navegador no soporta la reproducción de audio.
+    </audio>
+</body>
+</html>
